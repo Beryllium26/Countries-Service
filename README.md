@@ -1,11 +1,11 @@
 # Countries-Service
-micro-services that return a list of valid countries that currency can be transferred from or transferred to
+micro-service that return a list of valid countries that currency can be transferred from or transferred to.
 
-This is a JSON 'REST' API written in go for the express purpose of an exercise I have been asked to do. I had never used go before but I felt that picking what I felt was one of the best tool for the job, was worth the challenge.
+This is a JSON 'REST' API written in go for the express purpose of an exercise I have been asked to do. I had never used 'go' before but I felt that picking what I felt was one of the best tool for the job, was worth the challenge.
 
-It exposes a single location resource:  /api/v1/
+It exposes a single location resource fro the api:  /api/v1/
 
-An about page is available at: /about
+An about page is available at /about and / 
 
 
 
@@ -21,14 +21,19 @@ go build
 
 go test ./...
 
-
-# start the http server
+start the http server
 ./
 
 
 Testing
 
-Install gocheck ( http://gopkg.in/check.v1 ) as the internal testing library is relatively slim, and we could do with some of the nice fearures that gocheck provides: http://labix.org/gocheck
+curl -sv --header "Accept: application/json" http://127.0.0.1:8083/api/v1/countries?target=source
+
+curl -sv --header "Accept: application/json" http://127.0.0.1:8083/api/v1/countries?target=destination
+
+
+
+Install gocheck ( http://gopkg.in/check.v1 ) as the internal testing library is relatively slim, and we could do with some of the nice features that gocheck provides: http://labix.org/gocheck
 
 
 
